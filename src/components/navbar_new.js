@@ -5,7 +5,10 @@ function Navbar(props) {
   const [expand, setExpand] = useState(false);
 
   return (
-    <div className="Navbar">
+    <div
+      className="Navbar"
+      style={{width: window.innerWidth > 769 && expand ? '6rem' : ''}}
+    >
       <div className="navbar-left">English</div>
       <div className="navbar-middle">
         <Link to="/">
@@ -24,7 +27,12 @@ function Navbar(props) {
       >
         {expand ? 'Close' : 'Menu'}
       </div>
-      {expand && <div className="expand"></div>}
+      {expand && (
+        <div
+          className="expand"
+          style={{left: window.innerWidth > 769 && expand ? '6rem' : ''}}
+        ></div>
+      )}
     </div>
   );
 }
