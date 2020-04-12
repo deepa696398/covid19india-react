@@ -146,7 +146,7 @@ function Home(props) {
                 </div>
 
                 <div className="scale-modes">
-                  <label>Scale Modes</label>
+                  <label className="main">Scale Modes</label>
                   <div className="timeseries-mode">
                     <label htmlFor="timeseries-mode">Uniform</label>
                     <input
