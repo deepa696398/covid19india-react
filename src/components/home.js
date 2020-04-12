@@ -79,11 +79,14 @@ function Home(props) {
               </h5>
               <Icon.RefreshCw />
               {!showUpdates && (
-                <Icon.Bell
-                  onClick={() => {
-                    setShowUpdates(!showUpdates);
-                  }}
-                />
+                <div className="bell-icon">
+                  <Icon.Bell
+                    onClick={() => {
+                      setShowUpdates(!showUpdates);
+                    }}
+                  />
+                  <div className="indicator"></div>
+                </div>
               )}
               {showUpdates && (
                 <Icon.BellOff

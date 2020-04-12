@@ -164,7 +164,7 @@ function Row(props) {
       >
         <td colSpan={2}>
           <div className="last-update">
-            <h6>Last Updated&nbsp;</h6>
+            <h6>Last updated&nbsp;</h6>
             <h6
               title={
                 isNaN(Date.parse(formatDate(props.state.lastupdatedtime)))
@@ -177,7 +177,7 @@ function Row(props) {
                 : `${formatDistance(
                     new Date(formatDate(props.state.lastupdatedtime)),
                     new Date()
-                  )} Ago`}
+                  )} ago`}
             </h6>
           </div>
         </td>

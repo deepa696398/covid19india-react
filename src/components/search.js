@@ -1,5 +1,6 @@
 import React, {useState, useEffect} from 'react';
 import * as Icon from 'react-feather';
+import {Link} from 'react-router-dom';
 
 function Search(props) {
   const [searchValue, setSearchValue] = useState('');
@@ -18,6 +19,7 @@ function Search(props) {
   return (
     <div className="Search">
       <label>Search your city, resources, etc</label>
+      <div className="line"></div>
       <input
         type="text"
         placeholder="Karnataka"
@@ -32,17 +34,31 @@ function Search(props) {
           setSearchValue(event.target.value);
         }}
       />
-      <Icon.Search />
+      <div className="search-button">
+        <Icon.Search />
+      </div>
+      {searchValue.length > 0 && (
+        <div
+          className="close-button"
+          onClick={() => {
+            setSearchValue('');
+          }}
+        >
+          <Icon.X />
+        </div>
+      )}
       {results.length > 0 && (
         <div className="results">
           {results.map((result, index) => {
             return (
-              <div key={index} className="result">
-                <div className="result-name">{result.name}</div>
-                <div className="result-type">
-                  Visit {result?.type?.toLowerCase()} page
+              <Link key={index} to={`state/${result.name}`}>
+                <div className="result">
+                  <div className="result-name">{result.name}</div>
+                  <div className="result-type">
+                    Visit {result?.type?.toLowerCase()} page
+                  </div>
                 </div>
-              </div>
+              </Link>
             );
           })}
         </div>

@@ -407,7 +407,7 @@ export default function ({
         <h1>{currentMap.name}</h1>
         <h6>
           {window.innerWidth <= 769 ? 'Tap' : 'Hover'} over a{' '}
-          {currentMap.mapType === MAP_TYPES.COUNTRY ? 'state/ut' : 'district'}{' '}
+          {currentMap.mapType === MAP_TYPES.COUNTRY ? 'state/UT' : 'district'}{' '}
           for more details
         </h6>
       </div>
@@ -509,12 +509,15 @@ export default function ({
         )}
 
         {currentMap.mapType === MAP_TYPES.STATE ? (
-          <h4 className="district-confirmed">
-            Confirmed cases:{' '}
+          <h1 className="district-confirmed">
             {currentMapData[currentHoveredRegion.name]
               ? currentMapData[currentHoveredRegion.name]
               : 0}
-          </h4>
+            <br />
+            <span style={{fontSize: '0.75rem', fontWeight: 600}}>
+              confirmed
+            </span>
+          </h1>
         ) : null}
 
         {currentMap.mapType === MAP_TYPES.STATE &&
