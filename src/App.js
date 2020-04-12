@@ -10,14 +10,13 @@ import * as Icon from 'react-feather';
 import './App.scss';
 
 import Home from './components/home';
-import Navbar from './components/navbar';
+import Navbar from './components/navbar_new';
 import Links from './components/links';
 import FAQ from './components/faq';
-import Banner from './components/banner';
 import PatientDB from './components/patientdb';
 import DeepDive from './components/deepdive';
 import Resources from './components/resources';
-/* import PatientDB from './components/patientdb';*/
+import State from './components/state';
 
 const history = require('history').createBrowserHistory;
 
@@ -59,6 +58,12 @@ function App() {
       displayName: 'Essentials',
       animationDelayForNavbar: 0.7,
     },
+    {
+      pageLink: '/state/:stateName',
+      view: State,
+      displayName: 'State',
+      animationDelayForNavbar: 0.8,
+    },
   ];
 
   return (
@@ -67,8 +72,7 @@ function App() {
         <Route
           render={({location}) => (
             <div className="Almighty-Router">
-              <Navbar pages={pages} />
-              <Banner />
+              <Navbar />
               <Route exact path="/" render={() => <Redirect to="/" />} />
               <Switch location={location}>
                 {pages.map((page, i) => {
