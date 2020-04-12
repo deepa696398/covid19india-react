@@ -6,7 +6,6 @@ import {
   formatNumber,
 } from '../utils/common-functions';
 import {formatDistance} from 'date-fns';
-import {Link} from 'react-router-dom';
 
 function Row(props) {
   const [state, setState] = useState(props.state);
@@ -109,11 +108,6 @@ function Row(props) {
               <Icon.ChevronDown />
             </span>
             {state.state}
-            {state.state === 'West Bengal' && (
-              <Link to="/faq">
-                <Icon.HelpCircle className="height-22" />
-              </Link>
-            )}
           </div>
         </td>
         <td>

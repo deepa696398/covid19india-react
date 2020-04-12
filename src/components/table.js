@@ -104,7 +104,7 @@ function Table(props) {
   return (
     <React.Fragment>
       <h5 className="table-fineprint fadeInUp" style={{animationDelay: '1.5s'}}>
-        Compiled from State Govt. numbers <Link to="/faq">Know More</Link>
+        Compiled from State Govt. numbers, <Link to="/faq">know more!</Link>
       </h5>
       <table className="table fadeInUp" style={{animationDelay: '1.8s'}}>
         <thead>
